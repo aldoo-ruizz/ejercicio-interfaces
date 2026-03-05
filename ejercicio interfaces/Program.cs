@@ -3,6 +3,10 @@ using ejercicio_interfaces.clases;
 
 namespace ejercicio_interfaces
 {
+    /// <summary>
+    /// ARD 20260503
+    /// se creo un programa que permite enviar notificaciones por email o sms utilizando una interfaz INotificable.
+    /// </summary>
     internal class Program
     {
         static void Main(string[] args)

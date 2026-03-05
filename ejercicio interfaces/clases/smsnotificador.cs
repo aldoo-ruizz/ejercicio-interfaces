@@ -7,14 +7,26 @@ using ejercicio_interfaces.interfaces;
 
 namespace ejercicio_interfaces.clases
 {
+    /// <summary>
+    /// ARD 20260503
+    /// se creo una clase smsnotificador que implementa la interfaz INotificable para enviar notificaciones por SMS. La clase tiene una propiedad numero para almacenar el número de teléfono del destinatario, y los métodos enviarmensaje y enviarconfirmacion para enviar mensajes y confirmaciones respectivamente.
+    /// </summary>
     internal class smsnotificador: INotificable
     {
-        public string numero { get; set; }
+        public int numero { get; set; }
 
         public smsnotificador()
         {
-            Console.WriteLine("cual es su numero?");
-            numero = Console.ReadLine();
+            try
+            {
+                Console.WriteLine("cual es su numero?");
+                numero = Convert.ToInt32(Console.ReadLine());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
         }
 
         public void enviarmensaje(string mensaje)
