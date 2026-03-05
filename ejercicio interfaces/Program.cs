@@ -11,42 +11,48 @@ namespace ejercicio_interfaces
     {
         static void Main(string[] args)
         {
-            int opt;
-            do
-            {
-                Console.WriteLine("1) Enviar notificación mail");
-                Console.WriteLine("2) Enviar notificación sms");
-                Console.WriteLine("3) Salir");
-                Console.Write("Opción: ");
-                opt = Convert.ToInt32(Console.ReadLine());
-
-                switch (opt)
+           
+                string opt;
+                do
                 {
-                    case 1:
-                        emailnotificador noti = new emailnotificador();
-                        noti.enviarmensaje("Mensaje de prueba");
-                        noti.enviarconfirmacion();
-                        break;
 
-                    case 2:
-                        smsnotificador noti2 = new smsnotificador();
-                        noti2.enviarmensaje("Mensaje de prueba");
-                        noti2.enviarconfirmacion();
+                    Console.WriteLine("1) Enviar notificación mail");
+                    Console.WriteLine("2) Enviar notificación sms");
+                    Console.WriteLine("3) Salir");
+                    Console.Write("Opción: ");
+                    opt = Console.ReadLine();
 
-                        break;
+                    switch (opt)
+                    {
+                        case "1":
+                            emailnotificador noti = new emailnotificador();
+                            noti.enviarmensaje("Mensaje de prueba");
+                            noti.enviarconfirmacion();
+                            break;
 
-                    case 3:
-                        Console.WriteLine("Adiós.");
-                        break;
+                        case "2":
+                            smsnotificador noti2 = new smsnotificador();
+                            noti2.enviarmensaje("Mensaje de prueba");
+                            noti2.enviarconfirmacion();
 
-                    default:
-                        Console.WriteLine("Opción inválida.");
-                        break;
-                }
+                            break;
 
-                Console.WriteLine();
+                        case "3":
+                            Console.WriteLine("Adiós.");
+                            break;
 
-            } while (opt != 3);
+                        default:
+                            Console.WriteLine("Opción inválida.");
+                            break;
+                    }
+
+                    Console.WriteLine();
+
+                } while (opt != "3");
+            }
+            
+
+            
         }
     }
-}
+
